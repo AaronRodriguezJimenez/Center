@@ -4,14 +4,16 @@
       dimension x(1500,3)
 
       call  prom(promx,promy,promz)
-      a = promx
-      b = promy
-      c = promz
+      a = promx  !Average coordinate in x
+      b = promy  !Average coordinate in y
+      c = promz  !Average coordinate in z
       print *, 'Coordenadas Promedio:', a , b, c
       call  mov(a, b, c)
 
       end program centrar
-      
+
+! Subrutine for calculate average coordinates
+
           subroutine prom(promx, promy, promz)
           implicit real*8 (a-h,o-z)
           real :: promx, promy, promz, sumax, sumay, sumaz
@@ -41,8 +43,10 @@
            return
            end
 
+!Subroutine made for move atoms with respect to the center
+
            subroutine mov(a, b, c)
-!           implicit real*8 (a-h,o-z)
+
            dimension x(1500,3)
            integer i, k, n
            write (*,*) 'Numero de atomos a desplazar:'
